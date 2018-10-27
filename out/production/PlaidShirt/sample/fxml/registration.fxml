@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
+   <children>
+      <Pane prefHeight="440.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="backToLogin" cancelButton="true" layoutX="405.0" layoutY="318.0" mnemonicParsing="false" onAction="#ExitToLogin" text="Back" />
+         </children>
+      </Pane>
+      <TextField layoutX="136.0" layoutY="193.0" prefHeight="27.0" prefWidth="328.0" promptText="Secondname" AnchorPane.rightAnchor="136.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="firstName" layoutX="136.0" layoutY="151.0" prefHeight="27.0" prefWidth="328.0" promptText="Firstname" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="151.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="137.0" layoutY="230.0" prefHeight="27.0" prefWidth="328.0" promptText="Login" AnchorPane.rightAnchor="136.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="137.0" layoutY="271.0" prefHeight="27.0" prefWidth="328.0" promptText="Password" AnchorPane.rightAnchor="136.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <Button layoutX="137.0" layoutY="315.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="126.0" text="Registration" AnchorPane.leftAnchor="137.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
