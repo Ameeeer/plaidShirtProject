@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,37 +8,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
+<AnchorPane focusTraversable="true" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="440.0" prefWidth="600.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
    <children>
-      <Pane prefHeight="440.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="backToLogin" cancelButton="true" layoutX="405.0" layoutY="318.0" mnemonicParsing="false" onAction="#ExitToLogin" text="Back" />
-         </children>
-      </Pane>
-      <TextField layoutX="136.0" layoutY="193.0" prefHeight="27.0" prefWidth="328.0" promptText="Secondname" AnchorPane.rightAnchor="136.0">
+      <Button fx:id="backToLogin" cancelButton="true" centerShape="false" layoutX="401.0" layoutY="257.0" mnemonicParsing="false" onAction="#ExitToLogin" pickOnBounds="false" snapToPixel="false" text="Back" AnchorPane.rightAnchor="150.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <TextField fx:id="nameAtProfile" alignment="TOP_LEFT" cacheShape="false" centerShape="false" layoutX="122.0" layoutY="140.0" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="27.0" prefWidth="328.0" promptText="Name" scaleShape="false" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="150.0">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </TextField>
-      <TextField fx:id="firstName" layoutX="136.0" layoutY="151.0" prefHeight="27.0" prefWidth="328.0" promptText="Firstname" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="151.0">
+      <TextField fx:id="loginAtRegistration" centerShape="false" layoutX="122.0" layoutY="181.0" prefHeight="27.0" prefWidth="328.0" promptText="Login" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="150.0">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </TextField>
-      <TextField layoutX="137.0" layoutY="230.0" prefHeight="27.0" prefWidth="328.0" promptText="Login" AnchorPane.rightAnchor="136.0">
+      <TextField fx:id="passAtRegistration" centerShape="false" layoutX="122.0" layoutY="220.0" prefHeight="27.0" prefWidth="328.0" promptText="Password" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="150.0">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </TextField>
-      <TextField layoutX="137.0" layoutY="271.0" prefHeight="27.0" prefWidth="328.0" promptText="Password" AnchorPane.rightAnchor="136.0">
+      <Button fx:id="registrateUser" centerShape="false" layoutX="122.0" layoutY="257.0" mnemonicParsing="false" onAction="#setSignIn" prefHeight="27.0" prefWidth="126.0" text="Registration">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
-      </TextField>
-      <Button layoutX="137.0" layoutY="315.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="126.0" text="Registration" AnchorPane.leftAnchor="137.0">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </Button>
    </children>
 </AnchorPane>
