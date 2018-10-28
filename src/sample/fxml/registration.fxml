@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane focusTraversable="true" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="440.0" prefWidth="600.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
    <children>
       <Button fx:id="backToLogin" cancelButton="true" centerShape="false" layoutX="401.0" layoutY="257.0" mnemonicParsing="false" onAction="#ExitToLogin" pickOnBounds="false" snapToPixel="false" text="Back" AnchorPane.rightAnchor="150.0">
