@@ -1,18 +1,27 @@
 package sample.objects;
 
-public class user {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+
+public class user extends Observer {
     private String password;
-    public String Name;
+    public String name;
     public String login;
     public int id;
+    List<user> users = new ArrayList<user>();
 
-
-    public String getName() {
-        return Name;
+    public user(List<user> users) {
+        this.users = users;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public String getname() {
+        return name;
+    }
+
+    public void setname(String name) {
+        name = name;
     }
 
     public String getLogin() {
@@ -25,8 +34,9 @@ public class user {
 
     public user(String password, String name, String login, int id) {
         this.password = password;
-        Name = name;
+        this.name = name;
         this.login = login;
+        this.id = id;
     }
 
     public int getId() {
@@ -43,5 +53,10 @@ public class user {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public void update() {
+
     }
 }

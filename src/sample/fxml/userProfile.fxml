@@ -8,8 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
+<AnchorPane fx:id="change" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
    <children>
+      <Button fx:id="mainTests" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Main" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="checkProfile" layoutX="96.0" layoutY="11.0" mnemonicParsing="false" onAction="#setSignIn" prefHeight="27.0" prefWidth="68.0" text="Profile" AnchorPane.leftAnchor="96.0" />
+      <Button fx:id="exitOnLogin" layoutX="568.0" layoutY="11.0" mnemonicParsing="false" onAction="#ExitToLogin" prefHeight="27.0" prefWidth="59.0" text="Exit" AnchorPane.rightAnchor="14.0" />
+      <TextField fx:id="setNameIntoProfile" layoutX="106.0" layoutY="164.0" prefHeight="24.0" prefWidth="299.0" />
+      <TextField fx:id="setLoginIntoProfile" editable="false" layoutX="107.0" layoutY="206.0" prefHeight="27.0" prefWidth="298.0" />
+      <TextField fx:id="setPasswordIntoProfile" editable="false" layoutX="108.0" layoutY="249.0" prefHeight="27.0" prefWidth="297.0" />
+      <Button fx:id="changeLogin" layoutX="428.0" layoutY="206.0" mnemonicParsing="false" text="Change" />
+      <Button fx:id="changePassword" layoutX="429.0" layoutY="249.0" mnemonicParsing="false" text="Change" />
+      <Button fx:id="changeName" layoutX="428.0" layoutY="164.0" mnemonicParsing="false" text="Change" />
       <ImageView cache="true" cacheHint="SCALE_AND_ROTATE" fitHeight="49.0" fitWidth="641.0" focusTraversable="true" mouseTransparent="true" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -21,11 +30,5 @@
             <Image url="@../../../boardOnProfiel.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="mainTests" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="Main" AnchorPane.leftAnchor="14.0" />
-      <Button fx:id="checkProfile" layoutX="96.0" layoutY="11.0" mnemonicParsing="false" onAction="#setSignIn" prefHeight="27.0" prefWidth="68.0" text="Profile" AnchorPane.leftAnchor="96.0" />
-      <Button fx:id="exitOnLogin" layoutX="568.0" layoutY="11.0" mnemonicParsing="false" onAction="#ExitToLogin" prefHeight="27.0" prefWidth="59.0" text="Exit" AnchorPane.rightAnchor="14.0" />
-      <TextField fx:id="setName" layoutX="106.0" layoutY="164.0" prefHeight="24.0" prefWidth="299.0" promptText="Name" />
-      <TextField fx:id="setLogin" layoutX="107.0" layoutY="206.0" prefHeight="27.0" prefWidth="298.0" promptText="Login" />
-      <TextField fx:id="setPassword" layoutX="108.0" layoutY="249.0" prefHeight="27.0" prefWidth="297.0" promptText="Password" />
    </children>
 </AnchorPane>

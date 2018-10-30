@@ -18,6 +18,15 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Controller {
+
+    @FXML
+    private Button changeName;
+    @FXML
+    private Button changeLogin;
+
+    @FXML
+    private Button changePassword;
+
     @FXML
     private TextField loginAtRegistration;
 
@@ -33,30 +42,24 @@ public class Controller {
     @FXML
     private TextField nameAtProfile;
     public int userId = 0;
-
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     private PasswordField pass;
-
     @FXML
     private TextField log;
-
     @FXML
     private Button registrate;
-
     @FXML
     private Button signIn;
     @FXML
     private Text textIfNotCorrected;
 
-    @FXML
-    void initialize() {
-    }
+    String nameToProfile = null;
+    String loginToProfile = null;
+    String passwordToProfile = null;
 
     @FXML
     private Button exitOnLogin;
@@ -67,16 +70,31 @@ public class Controller {
     private Button checkProfile;
 
     @FXML
-    private TextField setName;
+    public TextField setNameIntoProfile;
 
     @FXML
-    private TextField setPassword;
+    public TextField setPasswordIntoProfile;
 
     @FXML
-    private TextField setLogin;
+    public TextField setLoginIntoProfile;
+    @FXML
+    void initialize() {
+        /*Scanner scanner = new Scanner(new File("infoAboutUsers.txt"));
+        String s = scanner.nextLine();
+        String[] elems = s.split(" ");
+        List<user> users = new ArrayList<user>();
+        while (scanner.hasNextLine()) {
+            String aa = scanner.nextLine();
+            users.add(new user(elems[3], elems[3], elems[2], Integer.parseInt(elems[1])));
+            if (aa == null) {
+                return;
+            }
+        }*/
+    }
+
 
     @FXML
-    public void setSignIn(ActionEvent event) throws IOException {
+    public void setSignIn(ActionEvent event) throws FileNotFoundException {
         Object source = event.getSource();
         Button clicked = (Button) source;
         switch (clicked.getId()) {
@@ -98,7 +116,6 @@ public class Controller {
             case "signIn": /*При нажатии на SignIn происходит проверка введенных данных в Поле Логин и пароль
             Если данные введены верны идет переход в профиль пользователя*/
                 Scanner sc = new Scanner(new File("infoAboutUsers.txt"));
-
                 while (sc.hasNextLine()) {
                     String userLogin = log.getText();
                     String userPassword = pass.getText();
@@ -108,10 +125,17 @@ public class Controller {
                         signIn.getScene().getWindow().hide();
                         FXMLLoader loader2 = new FXMLLoader();
                         loader2.setLocation(getClass().getResource("/sample/fxml/Profile.fxml"));
-                        loader2.load();
+                        try {
+                            loader2.load();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         Parent root = loader2.getRoot();
                         Stage stage1 = new Stage();
                         stage1.setScene(new Scene(root));
+                        loginToProfile = elems[1];
+                        passwordToProfile = elems[2];
+                        nameToProfile = elems[3];
                         stage1.setMinHeight(600);
                         stage1.setMinWidth(800);
                         stage1.show();
@@ -123,22 +147,33 @@ public class Controller {
             case "checkProfile": {
                 Scanner scanner = new Scanner(new File("infoAboutUsers.txt"));
                 String s = scanner.nextLine();
-                String[] elems = s.split(" ");
+//                String[] elems = s.split(" ");
                 checkProfile.getScene().getWindow().hide();
                 FXMLLoader loader2 = new FXMLLoader();
                 loader2.setLocation(getClass().getResource("/sample/fxml/userProfile.fxml"));
-                loader2.load();
+                try {
+                    loader2.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 Parent root = loader2.getRoot();
                 Stage stage1 = new Stage();
+                setPasswordIntoProfile = new TextField();
+                passwordToProfile = "hop-hey";
+                setPasswordIntoProfile.setText("hop-hey");
+                setLoginIntoProfile = new TextField();
+                setLoginIntoProfile.setText("hop-hey");
+                setNameIntoProfile = new TextField();
+                setNameIntoProfile.setText("hop-hey");
                 stage1.setScene(new Scene(root));
                 stage1.setMinHeight(600);
                 stage1.setMinWidth(800);
                 stage1.show();
             }
             case "registrateUser":
+                Scanner scanner1 = new Scanner(new File("infoAboutUsers.txt"));
                 registrateUser.getScene().getWindow().hide();
                 FXMLLoader loader = new FXMLLoader();
-                Scanner scanner1 = new Scanner(new File("infoAboutUsers.txt"));
                 while (scanner1.hasNextLine()) {
                     String aa = scanner1.nextLine();
                     userId++;
@@ -167,6 +202,7 @@ public class Controller {
             //TODO: 27.10.2018 Profile with Name and Login and Connect this after login
         }
     }
+
     @FXML
     public void ExitToLogin(ActionEvent event) {
         Object source = event.getSource();
@@ -199,6 +235,22 @@ public class Controller {
                 Stage stage3 = new Stage();
                 stage3.setScene(new Scene(parent3));
                 stage3.show();
+                break;
+        }
+    }
+
+    @FXML
+    public void changeImpl(ActionEvent event) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("infoAboutUsers.txt"));
+        Object source = new Object();
+        Button clicked = (Button) source;
+        switch (clicked.getId()) {
+            case "changeName":
+                break;
+            case "changeLogin":
+                break;
+
+            case "changePassword":
                 break;
         }
     }
