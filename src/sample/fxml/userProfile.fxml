@@ -35,7 +35,7 @@
       <Button fx:id="Questions" layoutX="178.0" layoutY="11.0" mnemonicParsing="false" onAction="#getQuestions"
               prefHeight="27.0" prefWidth="83.0" text="Questions" AnchorPane.leftAnchor="178.0"/>
       <TextField fx:id="setNameIntoProfile" layoutX="135.0" layoutY="164.0" prefHeight="24.0" prefWidth="299.0"
-                 promptText="Name" text="Yakubovich"/>
+                 promptText="Name"/>
       <TextField fx:id="setLoginIntoProfile" layoutX="136.0" layoutY="207.0" prefHeight="27.0" prefWidth="298.0"
                  promptText="Login"/>
       <TextField fx:id="setPasswordIntoProfile" layoutX="136.0" layoutY="249.0" prefHeight="27.0" prefWidth="297.0"
@@ -44,5 +44,13 @@
       <Button fx:id="changePassword" layoutX="451.0" layoutY="249.0" mnemonicParsing="false" text="Change"/>
       <Button fx:id="changeName" layoutX="451.0" layoutY="164.0" mnemonicParsing="false" onAction="#changeImpl"
               text="Change"/>
+      <Button fx:id="getName" layoutX="14.0" layoutY="164.0" mnemonicParsing="false" onAction="#profileChanges"
+              prefHeight="27.0" prefWidth="104.0" text="Get Name"/>
+      <Button fx:id="getLogin" layoutX="15.0" layoutY="207.0" mnemonicParsing="false" onAction="#profileChanges"
+              prefHeight="27.0" prefWidth="104.0" text="Get Login"/>
+      <Button fx:id="getPassword" layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#profileChanges"
+              text="Get Password"/>
+      <Button fx:id="saveChanges" layoutX="136.0" layoutY="291.0" mnemonicParsing="false" onAction="#save"
+              text="Save Changes"/>
    </children>
 </AnchorPane>

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import sample.objects.Questionary;
 import sample.objects.UserProg;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ProfileController extends Controller {
@@ -24,18 +25,45 @@ public class ProfileController extends Controller {
     public Button MainMenu;
     @FXML
     public Text questionText;
+    @FXML
+    public Button getName;
+    @FXML
+    public Button getLogin;
+    @FXML
+    public Button getPassword;
+    @FXML
+    public Button saveChanges;
 
     @FXML
     public void profileChanges(ActionEvent event) {
         Object source = event.getSource();
         Button clicked = (Button) source;
         switch (clicked.getId()) {
-            case "changeName":
+            case "changeName": {
+                if (setNameIntoProfile.getText() != null)
+                    UserProg.getUserProgInfoIfConnected().get(0).setName(setNameIntoProfile.getText());
+            }
+            case "changeLogin": {
+                if (setLoginIntoProfile.getText() != null) {
+                    UserProg.getUserProgInfoIfConnected().get(0).setLogin(setLoginIntoProfile.getText());
+                }
+            }
+            case "changePassword": {
+                if (setPasswordIntoProfile.getText() != null)
+                    UserProg.getUserProgInfoIfConnected().get(0).setPassword(setPasswordIntoProfile.getText());
+            }
+            case "getName": {
+                setNameIntoProfile.setText(UserProg.getUserProgInfoIfConnected().get(0).getname());
                 break;
-            case "changeLogin":
+            }
+            case "getLogin": {
+                setLoginIntoProfile.setText(UserProg.getUserProgInfoIfConnected().get(0).getLogin());
                 break;
-            case "changePassword":
+            }
+            case "getPassword": {
+                setPasswordIntoProfile.setText(UserProg.getUserProgInfoIfConnected().get(0).getPassword());
                 break;
+            }
         }
     }
 
@@ -63,6 +91,7 @@ public class ProfileController extends Controller {
             case "sendAnswers": {
                 if (Questionary.checkAnswersOnArray() == true) {
                     Questionary.printAllAnswersWithid(UserProg.getUserProgInfoIfConnected().get(0).getId());
+                    questionText.setText("Вы отправили ответы");
                     System.out.println("da");
                     break;
                 } else if (Questionary.checkAnswersOnArray() == false) {
@@ -211,15 +240,30 @@ public class ProfileController extends Controller {
         switch (clicked.getId()) {
             case "answerYes": {
                 Questionary.setAnswers2(1, Questionary.getCurrentQuestionid());
+                if (Questionary.getCurrentQuestionid() == 0) {
+                    exceptionWrite.setText("Вы не выбрали вопрос");
+                } else {
+                    exceptionWrite.setText("Ваш ответ на вопрос номер " + Questionary.getCurrentQuestionid() + " засчитан");
+                }
                 System.out.println(Questionary.getAnswers2());
                 break;
             }
             case "answerNo": {
                 Questionary.setAnswers2(2, Questionary.getCurrentQuestionid());
+                if (Questionary.getCurrentQuestionid() == 0) {
+                    exceptionWrite.setText("Вы не выбрали вопрос");
+                } else {
+                    exceptionWrite.setText("Ваш ответ на вопрос номер " + Questionary.getCurrentQuestionid() + " засчитан");
+                }
                 break;
             }
             case "answerNoSure": {
                 Questionary.setAnswers2(3, Questionary.getCurrentQuestionid());
+                if (Questionary.getCurrentQuestionid() == 0) {
+                    exceptionWrite.setText("Вы не выбрали вопрос");
+                } else {
+                    exceptionWrite.setText("Ваш ответ на вопрос номер " + Questionary.getCurrentQuestionid() + " засчитан");
+                }
                 break;
             }
         }
@@ -263,6 +307,16 @@ public class ProfileController extends Controller {
                 stage1.setMinWidth(800);
                 stage1.show();
                 break;
+            }
+        }
+    }
+
+    @FXML
+    public void save(ActionEvent event) throws FileNotFoundException {
+        Object source = event.getSource();
+        Button clicked = (Button) source;
+        switch (clicked.getId()) {
+            case "saveChanges": {
             }
         }
     }

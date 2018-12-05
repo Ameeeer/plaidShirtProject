@@ -61,8 +61,8 @@
                         onAction="#chooseQuestion" prefHeight="27.0" prefWidth="35.0" text="10"/>
                 <Button fx:id="sendAnswers" layoutX="544.0" layoutY="99.0" mnemonicParsing="false" onAction="#check"
                         text="Отправить"/>
-                <Text fx:id="exceptionWrite" layoutX="348.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="Text" wrappingWidth="281.21875"/>
+                <Text fx:id="exceptionWrite" layoutX="325.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Нажмите Отправить после того как ответите на все вопросы." wrappingWidth="281.21875"/>
             </children>
         </Pane>
     </children>
