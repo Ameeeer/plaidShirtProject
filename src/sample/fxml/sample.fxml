@@ -24,7 +24,7 @@
             <TextField fx:id="log" layoutX="58.0" layoutY="186.0" prefHeight="27.0" prefWidth="249.0" promptText="Login" />
 
             <PasswordField id="pass" fx:id="pass" layoutX="58.0" layoutY="233.0" prefHeight="27.0" prefWidth="249.0"
-                           promptText="Password"/>
+                           promptText="Password" />
             <Button fx:id="signIn" layoutX="58.0" layoutY="268.0" mnemonicParsing="false" onAction="#setSignIn" text="SignIn" />
             <Button fx:id="registrate" layoutX="215.0" layoutY="268.0" mnemonicParsing="false" onAction="#setSignIn" text="Registration" />
             <ImageView fitHeight="115.0" fitWidth="171.0" layoutX="125.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">

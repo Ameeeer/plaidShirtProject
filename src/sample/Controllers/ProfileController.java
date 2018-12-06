@@ -11,28 +11,29 @@ import javafx.stage.Stage;
 import sample.objects.Questionary;
 import sample.objects.UserProg;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 public class ProfileController extends Controller {
+    UserProg userProg = (UserProg) UserProg.getUserProgInfoIfConnected().get(0);
     @FXML
-    public Text exceptionWrite;
+    protected Text exceptionWrite;
     @FXML
-    public Button sendAnswers;
+    protected Button sendAnswers;
     @FXML
-    public Button Questions;
+    protected Button Questions;
     @FXML
-    public Button MainMenu;
+    protected Button MainMenu;
     @FXML
-    public Text questionText;
+    protected Text questionText;
     @FXML
-    public Button getName;
+    protected Button getName;
     @FXML
-    public Button getLogin;
+    protected Button getLogin;
     @FXML
-    public Button getPassword;
+    protected Button getPassword;
     @FXML
-    public Button saveChanges;
+    protected Button saveChanges;
 
     @FXML
     public void profileChanges(ActionEvent event) {
@@ -40,20 +41,24 @@ public class ProfileController extends Controller {
         Button clicked = (Button) source;
         switch (clicked.getId()) {
             case "changeName": {
-                if (setNameIntoProfile.getText() != null)
-                    UserProg.getUserProgInfoIfConnected().get(0).setName(setNameIntoProfile.getText());
+                if (setNameIntoProfile.getText() != null){
+                    userProg.setName(setNameIntoProfile.getText());
+                System.out.println("Checked");}
+                break;
             }
             case "changeLogin": {
                 if (setLoginIntoProfile.getText() != null) {
-                    UserProg.getUserProgInfoIfConnected().get(0).setLogin(setLoginIntoProfile.getText());
+                    userProg.setLogin(setLoginIntoProfile.getText());
+                    break;
                 }
             }
             case "changePassword": {
                 if (setPasswordIntoProfile.getText() != null)
-                    UserProg.getUserProgInfoIfConnected().get(0).setPassword(setPasswordIntoProfile.getText());
+                    userProg.setPassword(setPasswordIntoProfile.getText());
+                break;
             }
             case "getName": {
-                setNameIntoProfile.setText(UserProg.getUserProgInfoIfConnected().get(0).getname());
+                setNameIntoProfile.setText(userProg.getname());
                 break;
             }
             case "getLogin": {
@@ -312,11 +317,28 @@ public class ProfileController extends Controller {
     }
 
     @FXML
-    public void save(ActionEvent event) throws FileNotFoundException {
+    public void save(ActionEvent event) throws IOException {
         Object source = event.getSource();
         Button clicked = (Button) source;
         switch (clicked.getId()) {
             case "saveChanges": {
+                File file = new File("infoAboutUsers.txt");
+                Scanner sc = new Scanner(new FileReader("infoAboutUsers.txt"));
+                int lineNum = 0;
+                while (sc.hasNextLine()) {
+                    String s = sc.nextLine();
+                    String[] elems = s.split(" ");
+                    if (Integer.parseInt(elems[0]) == userProg.getId()) {
+                        PrintWriter pw = new PrintWriter(new File("infoAboutUsers.txt"));
+                        sc.close();
+                        pw.print(userProg.getId() + " " + userProg.getLogin() + " " + userProg.getPassword() + " " + userProg.getname());
+                        System.out.println("PRinted");
+                        pw.close();
+                    } else {
+                        System.out.println("Not Found");
+                    }
+                    break;
+                }
             }
         }
     }

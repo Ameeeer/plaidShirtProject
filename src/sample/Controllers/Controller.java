@@ -16,128 +16,128 @@ import java.util.Scanner;
 
 public class Controller {
     @FXML
-    public Button click13;
+    protected Button click13;
 
     @FXML
-    public Button click14;
+    protected Button click14;
 
     @FXML
-    public Button click8;
+    protected Button click8;
 
     @FXML
-    public Button click11;
+    protected Button click11;
 
     @FXML
-    public Button click9;
+    protected Button click9;
 
     @FXML
-    public Button click12;
+    protected Button click12;
 
     @FXML
-    public Button click17;
+    protected Button click17;
 
     @FXML
-    public Button click18;
+    protected Button click18;
 
     @FXML
-    public Button answerNo;
+    protected Button answerNo;
 
     @FXML
-    public Button click15;
+    protected Button click15;
 
     @FXML
-    public Button click16;
+    protected Button click16;
 
     @FXML
-    public Button answerNoSure;
+    protected Button answerNoSure;
 
     @FXML
-    public Button click20;
+    protected Button click20;
 
     @FXML
-    public Button click10;
+    protected Button click10;
 
     @FXML
-    public Button answerYes;
+    protected Button answerYes;
 
     @FXML
-    public Button click2;
+    protected Button click2;
 
     @FXML
-    public Button click3;
+    protected Button click3;
 
     @FXML
-    public Button click19;
+    protected Button click19;
 
     @FXML
-    public Button click1;
+    protected Button click1;
 
     @FXML
-    public Button click6;
+    protected Button click6;
 
     @FXML
-    public Button click7;
+    protected Button click7;
 
     @FXML
-    public Button click4;
+    protected Button click4;
 
     @FXML
-    public Button click5;
+    protected Button click5;
     @FXML
-    public Button changeName;
+    protected Button changeName;
     @FXML
-    public Button changeLogin;
+    protected Button changeLogin;
 
     @FXML
-    public Button changePassword;
+    protected Button changePassword;
 
     @FXML
-    public TextField loginAtRegistration;
+    protected TextField loginAtRegistration;
 
     @FXML
-    public Button registrateUser;
+    protected Button registrateUser;
 
     @FXML
-    public TextField passAtRegistration;
+    protected TextField passAtRegistration;
 
     @FXML
-    public Button backToLogin;
+    protected Button backToLogin;
 
     @FXML
-    public TextField nameAtProfile;
-    public int userId = 0;
+    protected TextField nameAtProfile;
+    protected int userId = 0;
     @FXML
-    public ResourceBundle resources;
+    protected ResourceBundle resources;
     @FXML
-    public URL location;
+    protected URL location;
     @FXML
-    public PasswordField pass;
+    protected PasswordField pass;
     @FXML
-    public TextField log;
+    protected TextField log;
     @FXML
-    public Button registrate;
+    protected Button registrate;
     @FXML
-    public Button signIn;
+    protected Button signIn;
     @FXML
-    public Text textIfNotCorrected;
+    protected Text textIfNotCorrected;
     @FXML
-    public Button exitOnLogin;
+    protected Button exitOnLogin;
     @FXML
-    public Button mainTests;
+    protected Button mainTests;
     @FXML
-    public Text nameToString;
+    protected Text nameToString;
     @FXML
-    public Text passwordToString;
+    protected Text passwordToString;
     @FXML
-    public Text loginToString;
+    protected Text loginToString;
     @FXML
-    public Button checkProfile;
+    protected Button checkProfile;
     @FXML
-    public TextField setNameIntoProfile;
+    protected TextField setNameIntoProfile;
     @FXML
-    public TextField setPasswordIntoProfile;
+    protected TextField setPasswordIntoProfile;
     @FXML
-    public TextField setLoginIntoProfile;
+    protected TextField setLoginIntoProfile;
     boolean checkName = false;
 
 

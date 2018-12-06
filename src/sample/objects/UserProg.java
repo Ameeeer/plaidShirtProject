@@ -23,7 +23,8 @@ public class UserProg extends Observer {
     }
 
     public void setname(String name) {
-        name = name;
+        this.name = name;
+
     }
 
     public String getLogin() {
@@ -32,9 +33,10 @@ public class UserProg extends Observer {
 
     public void setName(String name) {
         this.name = name;
+
     }
 
-    public void setLogin(String login) {
+    public  void setLogin(String login) {
         this.login = login;
     }
 
