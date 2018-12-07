@@ -11,7 +11,10 @@ import javafx.stage.Stage;
 import sample.objects.Questionary;
 import sample.objects.UserProg;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ProfileController extends Controller {
@@ -41,9 +44,10 @@ public class ProfileController extends Controller {
         Button clicked = (Button) source;
         switch (clicked.getId()) {
             case "changeName": {
-                if (setNameIntoProfile.getText() != null){
+                if (setNameIntoProfile.getText() != null) {
                     userProg.setName(setNameIntoProfile.getText());
-                System.out.println("Checked");}
+                    System.out.println("Checked");
+                }
                 break;
             }
             case "changeLogin": {
@@ -322,9 +326,7 @@ public class ProfileController extends Controller {
         Button clicked = (Button) source;
         switch (clicked.getId()) {
             case "saveChanges": {
-                File file = new File("infoAboutUsers.txt");
                 Scanner sc = new Scanner(new FileReader("infoAboutUsers.txt"));
-                int lineNum = 0;
                 while (sc.hasNextLine()) {
                     String s = sc.nextLine();
                     String[] elems = s.split(" ");
