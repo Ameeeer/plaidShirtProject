@@ -7,12 +7,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import sample.objects.LoggerForProj;
 import sample.objects.UserProg;
 
 import java.io.*;
 import java.util.Scanner;
 
 public class SignUpController extends Controller {
+    LoggerForProj logger = LoggerForProj.getInstance();
     @FXML
     public void setSignIn(ActionEvent event) throws IOException {
         Object source = event.getSource();
@@ -69,7 +71,9 @@ public class SignUpController extends Controller {
                 String userLogin = log.getText();
                 String userPassword = pass.getText();
                 boolean c = UserProg.checkSignIn(userLogin, userPassword);
+               logger.info("Пользователь с логином " + userLogin + " " + "Пытался войти в профиль");
                 if (c == true) {
+
                     signIn.getScene().getWindow().hide();
                     FXMLLoader loader2 = new FXMLLoader();
                     loader2.setLocation(getClass().getResource("/sample/fxml/Profile.fxml"));
@@ -85,6 +89,7 @@ public class SignUpController extends Controller {
                     stage1.setMinWidth(800);
                     stage1.show();
                 } else {
+
                     textIfNotCorrected.setText("Not Corrected");
                 }
                 break;
