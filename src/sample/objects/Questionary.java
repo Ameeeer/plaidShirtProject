@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Questionary implements QuestionsIntrfs {
-    static int COUNT_ASWERS = 20;
-    static List<String> questions = new ArrayList<>();
-    static int[] answers2 = new int[COUNT_ASWERS];
-    static int currentQuestionid = 0;
+    public static int COUNT_ASWERS = 20;
+    public static List<String> questions = new ArrayList<>();
+    public static int[] answers2 = new int[COUNT_ASWERS];
+    public static int currentQuestionid = 0;
 
     public static List<String> getAllquestions() throws FileNotFoundException {
         List<String> questionsAdded = new ArrayList<>();
@@ -70,7 +70,6 @@ public class Questionary implements QuestionsIntrfs {
             }
         }
         return x;
-
     }
 
     public static void printAllAnswersWithid(int userId) throws IOException {

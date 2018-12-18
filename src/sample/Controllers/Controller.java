@@ -115,7 +115,7 @@ public class Controller {
     @FXML
     protected TextField log;
     @FXML
-    protected Button registrate;
+    public Button registrate;
     @FXML
     protected Button signIn;
     @FXML
