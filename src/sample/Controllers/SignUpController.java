@@ -20,15 +20,11 @@ public class SignUpController extends Controller {
         Object source = event.getSource();
         Button clicked = (Button) source;
         switch (clicked.getId()) {
-            case "registrate": //При нажатии на кнопку регистрации в main меню перебрасывает на страницу регистрации
+            case "registrate": //При нажатии на кнопку регистрации в main меню перебрасывает на страницу регистрацииr.
                 registrate.getScene().getWindow().hide();
                 FXMLLoader loader1 = new FXMLLoader();
                 loader1.setLocation(getClass().getResource("/sample/fxml/registration.fxml"));
-                try {
-                    loader1.load();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                loader1.load();
                 Parent parent1 = loader1.getRoot();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(parent1));
@@ -65,7 +61,6 @@ public class SignUpController extends Controller {
                 stage3.setScene(new Scene(parent3));
                 stage3.show();
                 break;
-            //TODO: 27.10.2018 Profile with Name and Login and Connect this after login
             case "signIn": /*При нажатии на SignIn происходит проверка введенных данных в Поле Логин и пароль
             Если данные введены верны идет переход в профиль пользователя*/
                 String userLogin = log.getText();

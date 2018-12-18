@@ -99,7 +99,8 @@ public class UserProg extends Observer {
         for (int i = 0; i < UserProgs.size(); i++) {
             if (UserProgs.get(i).getLogin().equals(login) && UserProgs.get(i).getPassword().equals(password)) {
                 checked = true;
-                UserProgInfoIfConnected.add(UserProgs.get(i));
+                UserProgInfoIfConnected.add(UserProgs.get(0));
+                UserProgInfoIfConnected.set(0, UserProgs.get(i));
             }
         }
         return checked;
