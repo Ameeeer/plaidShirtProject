@@ -17,8 +17,6 @@ public class Main extends Application {
     private Controller controller;
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Image image = new Image("kubik.png");
-        ImageView imageView = new ImageView(image);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/sample.fxml"));
         Parent root = fxmlLoader.load();
         controller = fxmlLoader.getController();
