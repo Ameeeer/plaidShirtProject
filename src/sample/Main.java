@@ -13,7 +13,9 @@ public class Main extends Application {
     private Controller controller;
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/sample.fxml"));
+        Parent root = fxmlLoader.load();
+        controller = fxmlLoader.getController();
         primaryStage.setMinHeight(400);
         primaryStage.setMinWidth(600);
         primaryStage.setScene(new Scene(root, 600, 400));

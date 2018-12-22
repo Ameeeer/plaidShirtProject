@@ -22,9 +22,6 @@
          <effect>
             <Blend />
          </effect>
-         <image>
-            <Image url="@../../../boardOnProfiel.jpeg" />
-         </image>
       </ImageView>
       <Text fx:id="passwordToString" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="169.21875" />
       <Text fx:id="loginToString" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="169.21875" />
