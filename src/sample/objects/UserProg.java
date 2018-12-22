@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserProg extends Observer {
+public class UserProg {
     private String password;
     public String name;
     public String login;
@@ -67,10 +67,6 @@ public class UserProg extends Observer {
         this.password = password;
     }
 
-    @Override
-    public void update() {
-
-    }
 
     public static List<UserProg> getAllUsers() {
         List<UserProg> users = new ArrayList<>();
