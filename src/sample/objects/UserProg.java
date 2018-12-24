@@ -78,11 +78,17 @@ public class UserProg {
         }
         while (scanner.hasNextLine()) {
             String s = scanner.nextLine();
+            if (s==null) return users;
             String[] elems = s.split(" ");
             int id = Integer.parseInt(elems[0]);
             String login = elems[1];
             String password = elems[2];
-            String name = elems[3];
+            String name = null;
+            if (elems[4].equals("*")) {
+                name = elems[3];
+            } else {
+                name = elems[3] + " " + elems[4];
+            }
             id = Integer.parseInt(elems[0]);
             users.add(new UserProg(id, login, password, name));
         }

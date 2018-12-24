@@ -12,9 +12,12 @@ import sample.objects.Questionary;
 import sample.objects.UserProg;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProfileController extends Controller {
@@ -326,20 +329,17 @@ public class ProfileController extends Controller {
         Button clicked = (Button) source;
         switch (clicked.getId()) {
             case "saveChanges": {
-                Scanner sc = new Scanner(new FileReader("infoAboutUsers.txt"));
+                Scanner sc = new Scanner(new File("infoAboutUsers.txt"));
                 while (sc.hasNextLine()) {
                     String s = sc.nextLine();
                     String[] elems = s.split(" ");
                     if (Integer.parseInt(elems[0]) == userProg.getId()) {
-                        PrintWriter pw = new PrintWriter(new File("infoAboutUsers.txt"));
-                        sc.close();
-                        pw.print(userProg.getId() + " " + userProg.getLogin() + " " + userProg.getPassword() + " " + userProg.getname());
-                        System.out.println("PRinted");
-                        pw.close();
-                    } else {
-                        System.out.println("Not Found");
+                        Path path = Paths.get("infoAboutUsers.txt");
+                        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+                        lines.set(userProg.getId() - 1, userProg.getId() + " " + userProg.getLogin() + " " + userProg.getPassword() + " " + userProg.getname() + " " + "*");
+                        Files.write(path, lines, StandardCharsets.UTF_8);
+                        break;
                     }
-                    break;
                 }
             }
         }

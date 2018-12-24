@@ -45,7 +45,7 @@ public class SignUpController extends Controller {
                 }
                 try {
                     PrintWriter pw = new PrintWriter(new FileOutputStream(new File("infoAboutUsers.txt"), true));
-                    pw.print("\n" + (userId + 1) + " " + loginAtRegistration.getText() + " " + passAtRegistration.getText() + " " + nameAtProfile.getText());
+                    pw.print((userId + 1) + " " + loginAtRegistration.getText() + " " + passAtRegistration.getText() + " " + nameAtProfile.getText()+ "*" + "\n");
                     pw.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
